@@ -15,7 +15,7 @@ import os
 
 # Add the parent directory to the Python path so we can import styler
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from styler import load_stylesheet
+from styler import load_stylesheet, Theme
 
 class DemoApp(QMainWindow):
     def __init__(self):
@@ -40,7 +40,7 @@ class DemoApp(QMainWindow):
         theme_layout = QHBoxLayout()
         theme_layout.addWidget(QLabel("Theme:"))
         self.theme_combo = QComboBox()
-        self.theme_combo.addItems(["light", "dark"])
+        self.theme_combo.addItems([theme.value.title() for theme in Theme])
         self.theme_combo.currentTextChanged.connect(self.change_theme)
         theme_layout.addWidget(self.theme_combo)
         theme_layout.addStretch()
@@ -254,6 +254,7 @@ class DemoApp(QMainWindow):
                 item = QStandardItem(f"Item {row},{col}")
                 table_model.setItem(row, col, item)
         table_view.setModel(table_model)
+        table_view.setMinimumHeight(200)
         table_layout.addWidget(table_view)
         table_tab.setLayout(table_layout)
         tabs.addTab(table_tab, "QTableView")
@@ -297,7 +298,7 @@ class DemoApp(QMainWindow):
 
     def change_theme(self, theme_name):
         try:
-            stylesheet = load_stylesheet(theme_name)
+            stylesheet = load_stylesheet(Theme(theme_name.lower()))
             QApplication.instance().setStyleSheet(stylesheet)
         except Exception as e:
             print(f"Error changing theme to {theme_name}:", str(e))
@@ -309,7 +310,7 @@ if __name__ == "__main__":
         app = QApplication(sys.argv)
         try:
             # Start with light theme by default
-            stylesheet = load_stylesheet("light")
+            stylesheet = load_stylesheet(Theme.LIGHT)
             app.setStyleSheet(stylesheet)
         except Exception as e:
             print("Error loading stylesheet:", str(e))
