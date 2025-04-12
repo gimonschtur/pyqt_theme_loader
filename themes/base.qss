@@ -25,14 +25,23 @@ QTimeEdit:focus, QComboBox:focus, QFontComboBox:focus {
     outline: none;
 }
 
-QComboBox::drop-down, QDateEdit::drop-down,
-QTimeEdit::drop-down, QSpinBox::drop-down {
-
+/* Dropdown Styling */
+QComboBox {
+    padding-right: 32px;  /* Make room for the arrow */
 }
 
-QComboBox::down-arrow, QDateEdit::down-arrow,
-QTimeEdit::down-arrow, QSpinBox::down-arrow {
+QComboBox::drop-down {
+    border: none;
+    width: 32px;
+    border-left: 1px solid;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
 
+QComboBox::down-arrow {
+    width: 12px;
+    height: 12px;
+    margin: 0px 10px;  /* Center the arrow */
 }
 
 /* Checkbox and Radio Button */

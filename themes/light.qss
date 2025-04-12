@@ -270,3 +270,35 @@ QLabel {
     background-color: transparent;
     border: none;
 }
+
+/* Dropdown and Spin Box Colors */
+QComboBox::drop-down {
+    background-color: #f0f2f4;
+    border-left: 1px solid #d6d9dc;
+}
+
+QComboBox::drop-down:hover {
+    background-color: #e4eaf1;
+}
+
+QComboBox::down-arrow {
+    image: url(themes/images/down-arrow-light.svg);
+}
+
+QComboBox::down-arrow:hover {
+    image: url(themes/images/down-arrow-light.svg);
+    opacity: 0.8;
+}
+
+/* Arrow Colors using QPalette */
+QComboBox::down-arrow {
+    background-color: transparent;
+}
+
+QComboBox::down-arrow {
+    qproperty-fillColor: #444444;
+}
+
+QComboBox::down-arrow:hover {
+    qproperty-fillColor: #1a73e8;
+}
