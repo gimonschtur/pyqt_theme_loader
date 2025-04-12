@@ -10,7 +10,7 @@ class Theme(Enum):
         """Return the theme name as a string."""
         return self.value
 
-def load_stylesheet(theme: Theme | str) -> str:
+def load_stylesheet(theme: Theme) -> str:
     """
     Load the QSS stylesheet content for the given theme.
 
