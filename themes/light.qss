@@ -264,3 +264,9 @@ QSplitter::handle {
 QSplitter::handle:hover {
     background-color: #1a73e8;
 }
+
+/* Label Colors */
+QLabel {
+    background-color: transparent;
+    border: none;
+}
