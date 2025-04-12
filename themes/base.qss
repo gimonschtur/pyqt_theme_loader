@@ -25,9 +25,13 @@ QTimeEdit:focus, QComboBox:focus, QFontComboBox:focus {
     outline: none;
 }
 
-/* Dropdown Styling */
+/* Dropdown and Spin Box Styling */
 QComboBox {
     padding-right: 32px;  /* Make room for the arrow */
+}
+
+QSpinBox, QDoubleSpinBox, QDateEdit, QTimeEdit {
+    padding-right: 20px;  /* Make room for the arrows */
 }
 
 QComboBox::drop-down {
@@ -38,10 +42,44 @@ QComboBox::drop-down {
     border-bottom-right-radius: 6px;
 }
 
+/* Spin box buttons */
+QSpinBox::up-button, QDoubleSpinBox::up-button,
+QDateEdit::up-button, QTimeEdit::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right;
+    width: 32px;
+    border-left: 1px solid;
+    border-top-right-radius: 6px;
+}
+
+QSpinBox::down-button, QDoubleSpinBox::down-button,
+QDateEdit::down-button, QTimeEdit::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right;
+    width: 32px;
+    border-left: 1px solid;
+    border-bottom-right-radius: 6px;
+}
+
+/* Arrow styling */
 QComboBox::down-arrow {
     width: 12px;
     height: 12px;
-    margin: 0px 10px;  /* Center the arrow */
+    margin: 0px 10px;
+}
+
+QSpinBox::up-arrow, QDoubleSpinBox::up-arrow,
+QDateEdit::up-arrow, QTimeEdit::up-arrow {
+    width: 10px;
+    height: 10px;
+    margin: 1px 5px;
+}
+
+QSpinBox::down-arrow, QDoubleSpinBox::down-arrow,
+QDateEdit::down-arrow, QTimeEdit::down-arrow {
+    width: 10px;
+    height: 10px;
+    margin: 1px 5px;
 }
 
 /* Checkbox and Radio Button */

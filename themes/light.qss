@@ -281,24 +281,49 @@ QComboBox::drop-down:hover {
     background-color: #e4eaf1;
 }
 
+QSpinBox::up-button, QDoubleSpinBox::up-button,
+QDateEdit::up-button, QTimeEdit::up-button {
+    background-color: #f0f2f4;
+    border-left: 1px solid #d6d9dc;
+    border-bottom: 1px solid #d6d9dc;
+}
+
+QSpinBox::up-button:hover, QDoubleSpinBox::up-button:hover,
+QDateEdit::up-button:hover, QTimeEdit::up-button:hover {
+    background-color: #e4eaf1;
+}
+
+QSpinBox::down-button, QDoubleSpinBox::down-button,
+QDateEdit::down-button, QTimeEdit::down-button {
+    background-color: #f0f2f4;
+    border-left: 1px solid #d6d9dc;
+}
+
+QSpinBox::down-button:hover, QDoubleSpinBox::down-button:hover,
+QDateEdit::down-button:hover, QTimeEdit::down-button:hover {
+    background-color: #e4eaf1;
+}
+
+/* Arrow Images */
 QComboBox::down-arrow {
     image: url(themes/images/down-arrow-light.svg);
 }
 
-QComboBox::down-arrow:hover {
+QSpinBox::up-arrow, QDoubleSpinBox::up-arrow,
+QDateEdit::up-arrow, QTimeEdit::up-arrow {
+    image: url(themes/images/up-arrow-light.svg);
+}
+
+QSpinBox::down-arrow, QDoubleSpinBox::down-arrow,
+QDateEdit::down-arrow, QTimeEdit::down-arrow {
     image: url(themes/images/down-arrow-light.svg);
+}
+
+/* Arrow Hover States */
+QComboBox::down-arrow:hover,
+QSpinBox::up-arrow:hover, QDoubleSpinBox::up-arrow:hover,
+QDateEdit::up-arrow:hover, QTimeEdit::up-arrow:hover,
+QSpinBox::down-arrow:hover, QDoubleSpinBox::down-arrow:hover,
+QDateEdit::down-arrow:hover, QTimeEdit::down-arrow:hover {
     opacity: 0.8;
-}
-
-/* Arrow Colors using QPalette */
-QComboBox::down-arrow {
-    background-color: transparent;
-}
-
-QComboBox::down-arrow {
-    qproperty-fillColor: #444444;
-}
-
-QComboBox::down-arrow:hover {
-    qproperty-fillColor: #1a73e8;
 }
