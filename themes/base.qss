@@ -27,16 +27,12 @@ QTimeEdit:focus, QComboBox:focus, QFontComboBox:focus {
 
 QComboBox::drop-down, QDateEdit::drop-down,
 QTimeEdit::drop-down, QSpinBox::drop-down {
-    border: none;
-    width: 24px;
-    background-color: transparent;
+
 }
 
 QComboBox::down-arrow, QDateEdit::down-arrow,
 QTimeEdit::down-arrow, QSpinBox::down-arrow {
-    image: url(down-arrow.png);
-    width: 14px;
-    height: 14px;
+
 }
 
 /* Checkbox and Radio Button */
